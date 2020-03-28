@@ -4,4 +4,24 @@ This repository has been created due to the Covid-19 global health crisis to do 
 
 ## Data
 
-The data folder aims to containing data of (missing!).
+The data folder aims to containing data related to
+
+ - Demographic data **MISSING**
+ - Mobility data **MISSING**
+ - Epidemiological data **MISSING**
+ - Other data related to epidemiological data? **MISSING** 
+
+## Codes
+
+Codes for 
+
+ - Analysing data (see [Data](#Data))
+ - Simulating different types of epidemics and containment strategies
+
+## Figures
+
+Figures generated with the codes (see [Codes](#Codes)).
+
+## Reports
+
+Reports of the results from the simulations.
