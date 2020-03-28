@@ -1,4 +1,6 @@
-      parameter(nodes=100000,np=2,nrun=10)
+c Total pop: 1095426
+c municipios = 67
+      parameter(nodes=1095426,np=67,nrun=10)
 c s2(l2(i)) = s1(i)
 c s1(l1(i)) = s2(i)
 c
@@ -6,6 +8,7 @@ c
       integer l1(nodes), l2(nodes)
       integer npobl1(np), npobl2(np), nl(np,np)
       integer index1(0:np), index2(0:np)
+      character*50 chr1
       
       integer nr_a
       
@@ -21,15 +24,23 @@ c---------------------------
       do i=1, np
         npobl1(i)=0
         npobl2(i)=0
+	do j=1, np
+	  nl(i,j)=0
+	enddo	  
       enddo
       
-      open(1,file='comm105.csv')
+c      open(1,file='comm105.csv')
+      open(1,file='ib_pob.csv')
       
       do i=1, 100
-        read(1,*,END=100) n1, n2, n12
-	npobl1(n1)=npobl1(n1) + n12
-	npobl2(n2)=npobl2(n2) + n12
-	nl(n1,n2)=n12
+c        read(1,*,END=100) n1, n2, n12
+c	npobl1(n1)=npobl1(n1) + n12
+c	npobl2(n2)=npobl2(n2) + n12
+c	nl(n1,n2)=n12
+        read(1,*,END=100) chr1, n11
+	npobl1(i)=npobl1(i) + n11
+	npobl2(i)=npobl2(i) + n11
+	nl(i,i)=n11
       enddo
 100   continue
 cc      print*,npobl1
