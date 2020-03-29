@@ -19,6 +19,11 @@ Codes for
 
  - Analysing data (see [Data](#Data))
  - Simulating different types of epidemics and containment strategies
+ - Ploting the results.
+
+ ## Results
+
+Results of the analysis and simulations.
 
 ## Figures
 
