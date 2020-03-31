@@ -1,0 +1,12 @@
+# files that github will ignore
+
+*.pyc
+*.log
+*.end
+*.dvi
+*.aux
+*.blg
+*.bbl
+*.backup
+*~
+./.ipynb_checkpoints/*
