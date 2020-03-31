@@ -37,3 +37,8 @@ Figures generated with the codes (see [Codes](#Codes)).
 ## Reports
 
 Reports of the results from the simulations.
+
+
+```{r, echo=FALSE}
+htmltools::includeHTML("./figures/ib_poblacion.html")
+```
