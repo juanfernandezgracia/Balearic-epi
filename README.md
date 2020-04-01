@@ -34,9 +34,9 @@ Time series from the model
 
 In order to fit the model to the data we proceed in the following way for each combination of parameters:
 
-1. Fix a proportion of recovered patients that actually die (mu_D). 
+1. Fix a proportion of recovered patients that actually die ($\mu_D$). 
 2. Shift rescaled curve of recovered patients by tau from the model to best fit the curve of deaths from the data. The best fit is assessed by a Chi squared function. *Match with last point of deaths maybe.*
-3. With that tau move also the curve of infected from the model and rescale it to best match the curve of UCI patients. Best value of this variable also given by Chi squared (mu_UCI).
+3. With that tau move also the curve of infected from the model and rescale it to best match the curve of UCI patients. Best value of this variable also given by Chi squared ($\mu_{UCI}$).
 4. Assign to this set of parameters the Chi squared that is the sum of the ones in 2. and 3. and save it together with the parameter values, the proportion of deaths and the obtained parameters tau and proportion of infected in UCI.
 
 From all the Chi squared values choose the one that is minimum.
