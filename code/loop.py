@@ -1,10 +1,10 @@
 import os
 import numpy as np
 
-p1min=0
-p1max=10
+p1min=5
+p1max=7
 p1dif=1
-p2min=0
+p2min=18
 p2max=20
 p2dif=1
 p3min=0
@@ -19,5 +19,5 @@ for param1 in v1:
   for param3 in v3:
    print(param1,param2,param3)
    os.system('./a.out '+str(param1)+" "+str(param2)+" "+str(param3))
-   os.system('m v fort.9 time_av_'+str(param1)+"_"+str(param2)+"_"+str(param3)+".dat")
-   os.system('m v fort.12 time_all_'+str(param1)+"_"+str(param2)+"_"+str(param3)+".dat")
+   os.system('mv fort.9 Output/time_av_'+str(param1)+"_"+str(param2)+"_"+str(param3)+".dat")
+   os.system('mv fort.12 Output/time_all_'+str(param1)+"_"+str(param2)+"_"+str(param3)+".dat")

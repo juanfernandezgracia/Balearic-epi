@@ -1,6 +1,6 @@
 c Total pop: 1095426
 c municipios = 67
-      parameter(nodes=1095426,np=67,nrun=1)
+      parameter(nodes=1095426,np=67,nrun=10)
 c s2(l2(i)) = s1(i)
 c s1(l1(i)) = s2(i)
 c
@@ -27,7 +27,7 @@ c
       
       CALL getarg(2, buffer)
       read(buffer,*) Tdis 
-      Tq=2*dis*nodes
+      Tq=2*(Tdis+Tinc)*nodes
 
       CALL getarg(3, buffer)
       read(buffer,*) dbeta 
