@@ -1,6 +1,6 @@
-      subroutine iter(nt,Tq,dbeta,dmu,nodes,s,T0,ns,ne,ni,nr)
+      subroutine iter(nt,Tq,T3,dbeta,dmu,nodes,s,T0,ns,ne,ni,nr)
 
-      integer s(nodes), T0(nodes), Tq, T30
+      integer s(nodes), T0(nodes), Tq, T3
       double precision dbeta, dmu
       double precision dran_u, u
 c
@@ -14,16 +14,19 @@ c
 	do while(ix.eq.iy)
 	  iy=i_dran(nodes)
 	enddo
+
 c	
 	if(s(ix)+s(iy).ne.0) then
 	  if(s(ix).eq.0) then
 	    if(s(iy).eq.1.or.s(iy).eq.2) then
-	      u=dran_u()
-	      if(u.lt.dbeta) then
-	        s(ix)=1
-		ns=ns-1
-		ne=ne+1
-		T0(ix)=it
+	      if(it-t0(iy).gt.t3) then
+		u=dran_u()
+		if(u.lt.dbeta) then
+	          s(ix)=1
+		  ns=ns-1
+		  ne=ne+1
+		  T0(ix)=it
+		endif
 	      endif
 	    endif
 
