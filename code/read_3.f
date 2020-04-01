@@ -1,9 +1,17 @@
+c@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@c
+c                                                                     c
+c            program for simulating covid epidemics in IB             c
+c                                                                     c
+c@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	  program covid_IB
+	!   implicit none
 c Total pop: 1095426
 c municipios = 67
       parameter(nodes=1095426,np=67,nrun=100)
 c s2(l2(i)) = s1(i)
 c s1(l1(i)) = s2(i)
 c
+      integer i,j,
       integer s1(nodes), s2(nodes), T1(nodes), T2(nodes)
       integer l1(nodes), l2(nodes)
       integer npobl1(np), npobl2(np), nl(np,np)
@@ -30,19 +38,19 @@ c---------------------------
       do i=1, np
         npobl1(i)=0
         npobl2(i)=0
-	do j=1, np
-	  nl(i,j)=0
-	enddo	  
+	    do j=1, np
+	      nl(i,j)=0
+    	enddo	  
       enddo
       
-      open(1,file='mobility.csv')
+      open(1,file='../data/mobility.csv')
       read(1,*)
       
       do i=1, 200
         read(1,*,END=100) n1, n2, n12
-	npobl1(n1+1)=npobl1(n1+1) + n12
-	npobl2(n2+1)=npobl2(n2+1) + n12
-	nl(n1+1,n2+1)=n12
+    	npobl1(n1+1)=npobl1(n1+1) + n12
+    	npobl2(n2+1)=npobl2(n2+1) + n12
+    	nl(n1+1,n2+1)=n12
       enddo
 100   continue
       close(1)
@@ -172,7 +180,7 @@ c---------------------------
 	    enddo	  
 	  enddo
 
-	  open(1,file='mobility50.csv')
+	  open(1,file='../data/mobility50.csv')
 	  read(1,*)
 
 	  do i=1, 200
@@ -276,7 +284,7 @@ c---
 	    enddo	  
 	  enddo
 
-	  open(1,file='mobility30.csv')
+	  open(1,file='../data/mobility30.csv')
 	  read(1,*)
 
 	  do i=1, 200
